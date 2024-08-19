@@ -1,0 +1,45 @@
+<layout id="MainLayout">
+    <label
+        x="center"
+        y="20%"
+        text="@Strings.AppName"
+        font="Graphics.FONT_XTINY"
+        justification="Graphics.TEXT_JUSTIFY_CENTER"
+        color="Graphics.COLOR_ORANGE"
+    /> 
+    <bitmap
+        id="id_burger_amount"
+        x="30%"
+        y="center"
+        filename="../drawables/images/burger.png"
+    />
+    <label
+        id="BurgerAmount"
+        x="65%"
+        y="center"
+        font="Graphics.FONT_LARGE"
+        justification="Graphics.TEXT_JUSTIFY_CENTER"
+        color="Graphics.COLOR_WHITE"
+    />
+    <label
+        id="BurgerLabel"
+        x="center"
+        y="69%"
+        text="@Strings.Burgerlabel"
+        font="Graphics.FONT_TINY"
+        justification="Graphics.TEXT_JUSTIFY_CENTER"
+        color="Graphics.COLOR_ORANGE"
+    />
+    <label
+        id="BurgerCalories"
+        x="center"
+        y="80%"
+        text="@Strings.Burgerlabel"
+        font="Graphics.FONT_XTINY"
+        justification="Graphics.TEXT_JUSTIFY_CENTER"
+        color="Graphics.COLOR_DK_GRAY"
+    />
+
+    <!--<label x="center" y="5" text="@Strings.prompt" font="Graphics.FONT_XTINY" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_ORANGE"/>
+    <bitmap id="id_monkey" x="center" y="30" filename="../drawables/images/purple_monster.png" />-->
+</layout>

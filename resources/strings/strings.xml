@@ -1,0 +1,12 @@
+<strings>
+    <string id="AppName">Burger Counter</string>
+
+    <string id="Burgerlabel">Burgers burned</string>
+    <string id="BurgerTotal">Total burgers</string>
+
+    <string id="prompt">Click the menu button</string>
+    <string id="menu_label_1">Burger home</string>
+    <string id="menu_label_2">Burger stats</string>
+
+    <string id="workedon">work in progress</string>
+</strings>

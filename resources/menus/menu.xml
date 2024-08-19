@@ -1,0 +1,4 @@
+<menu id="MainMenu">
+    <menu-item id="burger_home" label="@Strings.menu_label_1" />
+    <menu-item id="burger_stats" label="@Strings.menu_label_2" />
+</menu>

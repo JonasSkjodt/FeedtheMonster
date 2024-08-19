@@ -29,7 +29,7 @@ class FeedtheMonsterView extends WatchUi.View {
         // Assuming 250 calories per burger (normal hamburger)
         var burgerCount = Math.floor(totalCalories / 250);
 
-        // Save the burger count to storage so we can access it in burgerStats
+        // Save the burger count to storage
         Storage.setValue("burgerCount", burgerCount);
 
         // Display the burger count

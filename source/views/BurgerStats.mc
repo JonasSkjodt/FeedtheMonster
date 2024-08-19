@@ -47,7 +47,8 @@ class BurgerStats extends WatchUi.View {
         View.onUpdate(dc);
     }*/
 
-    /*function resetTotalBurgerCount() as Void {
+    /* currently used for testing purposes
+    function resetTotalBurgerCount() as Void {
         Storage.deleteValue(TOTAL_BURGERS_KEY);
         var totalBurgerCount = 0;
         Storage.setValue(TOTAL_BURGERS_KEY, totalBurgerCount);
@@ -57,14 +58,14 @@ class BurgerStats extends WatchUi.View {
         //resetTotalBurgerCount();
 
         // Retrieve values from storage
-        var savedBurgerCount = Storage.getValue(BURGER_COUNT_KEY);
-        var totalBurgerCount = Storage.getValue(TOTAL_BURGERS_KEY);
-        var lastUpdateTime = Storage.getValue(LAST_UPDATE_KEY);
+        var savedBurgerCount    = Storage.getValue(BURGER_COUNT_KEY);
+        var totalBurgerCount    = Storage.getValue(TOTAL_BURGERS_KEY);
+        var lastUpdateTime      = Storage.getValue(LAST_UPDATE_KEY);
 
         // Initialize counts and timestamps if null
-        savedBurgerCount = (savedBurgerCount != null) ? savedBurgerCount : 0;
-        totalBurgerCount = (totalBurgerCount != null) ? totalBurgerCount : 0;
-        lastUpdateTime = (lastUpdateTime != null) ? new Time.Moment(lastUpdateTime) : null;
+        savedBurgerCount    = (savedBurgerCount != null) ? savedBurgerCount : 0;
+        totalBurgerCount    = (totalBurgerCount != null) ? totalBurgerCount : 0;
+        lastUpdateTime      = (lastUpdateTime != null) ? new Time.Moment(lastUpdateTime) : null;
 
         System.println("savedBurgerCount: " + savedBurgerCount);
         System.println("totalBurgerCount: " + totalBurgerCount);
@@ -106,7 +107,7 @@ class BurgerStats extends WatchUi.View {
 }
 
 class BurgerStatsDelegate extends WatchUi.BehaviorDelegate {
-
+    
     function initialize() {
         BehaviorDelegate.initialize();
     }

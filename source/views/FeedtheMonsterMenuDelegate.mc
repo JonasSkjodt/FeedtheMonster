@@ -15,11 +15,8 @@ class FeedtheMonsterMenuDelegate extends WatchUi.MenuInputDelegate {
 			//switch to the new view
 			WatchUi.switchToView(new FeedtheMonsterView(), new FeedtheMonsterDelegate(), WatchUi.SLIDE_UP);
         } else if (item == :burger_stats) {
-            //pop once to close the menu
 			WatchUi.popView(WatchUi.SLIDE_IMMEDIATE);
-			//switch to the new view
 			WatchUi.switchToView(new BurgerStats(), new BurgerStatsDelegate(), WatchUi.SLIDE_UP);
         }
     }
-
 }

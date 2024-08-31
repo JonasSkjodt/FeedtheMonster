@@ -1,0 +1,11 @@
+<layout id="tasksLayout">
+    <label x="center" y="32%" text="@Strings.burger_task_1" font="Graphics.FONT_XTINY" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_ORANGE"/>
+    <label id="task_1" x="center" y="center"  font="Graphics.FONT_LARGE" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_WHITE"/>
+
+    <label x="center" y="32%" text="@Strings.burger_task_2" font="Graphics.FONT_XTINY" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_ORANGE"/>
+    <label id="task_2" x="center" y="center"  font="Graphics.FONT_LARGE" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_WHITE"/>
+
+    <label x="center" y="32%" text="@Strings.burger_task_3" font="Graphics.FONT_XTINY" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_ORANGE"/>
+    <label id="task_3" x="center" y="center"  font="Graphics.FONT_LARGE" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_WHITE"/>
+    
+</layout>

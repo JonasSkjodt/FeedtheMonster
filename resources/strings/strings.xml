@@ -7,6 +7,12 @@
     <string id="prompt">Click the menu button</string>
     <string id="menu_label_1">Burger home</string>
     <string id="menu_label_2">Burger stats</string>
+    <string id="menu_label_3">Burger tasks</string>
+
+    <!-- tasks -->
+    <string id="burger_task_1">Task 1</string>
+    <string id="burger_task_2">Task 2</string>
+    <string id="burger_task_3">Task 3</string>
 
     <string id="workedon">work in progress</string>
 </strings>

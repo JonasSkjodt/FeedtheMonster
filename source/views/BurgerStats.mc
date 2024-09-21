@@ -27,26 +27,6 @@ class BurgerStats extends WatchUi.View {
     function onShow() as Void {
     }
 
-    // Update the view
-    /*function onUpdate(dc as Dc) as Void {
-
-        // Retrieve the saved burger count from FeedtheMonsterView
-        var savedBurgerCount = Storage.getValue("burgerCount");
-
-        // If there's a saved value, display it
-        if (savedBurgerCount != null) {
-            var burgerAmount = View.findDrawableById("BurgerTotal") as Text;
-            burgerAmount.setText("" + savedBurgerCount);
-        } else {
-            // If there's no saved value, display a message
-            var burgerAmount = View.findDrawableById("BurgerTotal") as Text;
-            burgerAmount.setText("No burgers saved");
-        }
-
-        // Call the parent onUpdate function to redraw the layout
-        View.onUpdate(dc);
-    }*/
-
     /* currently used for testing purposes
     function resetTotalBurgerCount() as Void {
         Storage.deleteValue(TOTAL_BURGERS_KEY);
@@ -72,16 +52,16 @@ class BurgerStats extends WatchUi.View {
         System.println("lastUpdateTime: " + lastUpdateTime);
 
         // Get the current Time.Moment
+        // https://developer.garmin.com/connect-iq/api-docs/Toybox/Time/Moment.html
         var now = Time.now();
 
-        // Compare the last update time with the current time
-        var difference = lastUpdateTime != null ? lastUpdateTime.compare(now) : 86400;
-        
-        // Check if the difference is greater than or equal to 86400 seconds (24 hours)
-        if (lastUpdateTime == null || difference >= 86400) {
+        if (lastUpdateTime == null || hasMidnightPassedSinceLastUpdate(lastUpdateTime, now)) {
+            // Add saved burgers to total burgers
             totalBurgerCount += savedBurgerCount;
-            Storage.setValue(TOTAL_BURGERS_KEY, totalBurgerCount);
+
+            // Update last update time in storage
             Storage.setValue(LAST_UPDATE_KEY, now.value());
+            Storage.setValue(TOTAL_BURGERS_KEY, totalBurgerCount);
         }
 
         // Find and update the Text drawable
@@ -98,6 +78,19 @@ class BurgerStats extends WatchUi.View {
         View.onUpdate(dc);
     }
 
+    // Only update the total burger count if the last update time is before midnight today
+    function hasMidnightPassedSinceLastUpdate(lastUpdateTime as Time.Moment, now as Time.Moment) as Boolean {
+        // Get the number of seconds since midnight today
+        var secondsToday = now.value() % 86400;
+        var durationSinceMidnight = new Time.Duration(secondsToday);
+
+        // Get midnight of today by subtracting durationSinceMidnight from now
+        var midnightToday = now.subtract(durationSinceMidnight);
+
+        // Check if lastUpdateTime is before midnight today
+        return lastUpdateTime.lessThan(midnightToday);
+    }
+
     // Called when this View is removed from the screen. Save the
     // state of this View here. This includes freeing resources from
     // memory.
@@ -107,7 +100,7 @@ class BurgerStats extends WatchUi.View {
 }
 
 class BurgerStatsDelegate extends WatchUi.BehaviorDelegate {
-    
+
     function initialize() {
         BehaviorDelegate.initialize();
     }

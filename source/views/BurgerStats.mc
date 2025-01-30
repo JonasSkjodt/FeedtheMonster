@@ -98,7 +98,10 @@ class BurgerStats extends WatchUi.View {
     }
 
 }
-
+/**
+* Delegate for the BurgerStats view.
+* This delegate is responsible for handling the behavior of the view.
+*/
 class BurgerStatsDelegate extends WatchUi.BehaviorDelegate {
 
     function initialize() {
